@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 
+
 extension UIView {
+
     
     // OUTPUT 1
     @IBInspectable var dropShadow: Bool {
@@ -54,7 +56,7 @@ extension UIView {
     
     
     // OUTPUT 2
-    func dropShadow(color: UIColor = UIColor.black, opacity: Float = 0.5, offSet: CGSize = CGSize(width: -1, height: 1), radius: CGFloat = 1, scale: Bool = true)
+    func dropShadow(color: UIColor = UIColor.black, opacity: Float = 0.7, offSet: CGSize = CGSize(width: 2, height: 2), radius: CGFloat = 4, scale: Bool = true)
     {
         self.layer.masksToBounds = false
         self.layer.shadowColor = color.cgColor
@@ -62,9 +64,9 @@ extension UIView {
         self.layer.shadowOffset = offSet
         self.layer.shadowRadius = radius
         
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shouldRasterize = true
-        self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+//        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+//        self.layer.shouldRasterize = true
+//        self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
     
     

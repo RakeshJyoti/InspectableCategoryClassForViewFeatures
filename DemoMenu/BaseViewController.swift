@@ -11,12 +11,7 @@ import UIKit
 class MenuDrawer: UIView
 {
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    
+ 
     @IBOutlet weak var viewMenuListing: UIView?
     @IBOutlet weak var tblMenuList: UITableView?
 }
@@ -47,6 +42,7 @@ class BaseViewController: UIViewController
 
         let menuDrawer: MenuDrawer = UINib.init(nibName: "MenuSlider", bundle: nil).instantiate(withOwner: self, options: nil).first as! MenuDrawer
         self.view.addSubview(menuDrawer)
+        menuDrawer.isHidden = true
         
     }
 

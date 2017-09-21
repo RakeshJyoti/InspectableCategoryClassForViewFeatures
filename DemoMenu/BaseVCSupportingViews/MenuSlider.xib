@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseViewController" customModule="DemoMenu" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="4vQ-Wo-tFa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="MenuDrawer" customModule="DemoMenu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MK-hr-Rk6">
+                    <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TXj-kg-C5Y">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="TXj-kg-C5Y" firstAttribute="top" secondItem="1MK-hr-Rk6" secondAttribute="top" id="9wf-87-xcp"/>
+                        <constraint firstItem="TXj-kg-C5Y" firstAttribute="leading" secondItem="1MK-hr-Rk6" secondAttribute="leading" id="HIF-UP-OVa"/>
+                        <constraint firstAttribute="bottom" secondItem="TXj-kg-C5Y" secondAttribute="bottom" id="KsM-hd-0gn"/>
+                        <constraint firstAttribute="trailing" secondItem="TXj-kg-C5Y" secondAttribute="trailing" id="Qwy-gv-vCh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29926826584507044" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1MK-hr-Rk6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3cC-7l-d9x"/>
+                <constraint firstItem="1MK-hr-Rk6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6Dv-Vt-bhm"/>
+                <constraint firstAttribute="bottom" secondItem="1MK-hr-Rk6" secondAttribute="bottom" id="Ylb-9L-EAM"/>
+                <constraint firstItem="1MK-hr-Rk6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="260:375" id="g1c-Fx-RE0"/>
+            </constraints>
+            <connections>
+                <outlet property="tblMenuList" destination="TXj-kg-C5Y" id="h2l-ha-yIe"/>
+                <outlet property="viewMenuListing" destination="1MK-hr-Rk6" id="O6y-bk-vFK"/>
+            </connections>
+            <point key="canvasLocation" x="-47.5" y="-462.5"/>
+        </view>
+    </objects>
+</document>

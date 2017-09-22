@@ -10,10 +10,82 @@ import UIKit
 
 class MenuDrawer: UIView
 {
-    
- 
     @IBOutlet weak var viewMenuListing: UIView?
     @IBOutlet weak var tblMenuList: UITableView?
+    @IBOutlet weak var cnstMenuListingLeading: NSLayoutConstraint!
+    
+    
+    var superviewTmp: UIView?
+    
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+    }
+    
+    
+    func openCloseMenuToogle()
+    {
+        if isMenuOpened()
+        {
+            closeMenu()
+        }else
+        {
+            openMenu()
+        }
+    }
+    
+    
+    func isMenuOpened() -> Bool
+    {
+        return cnstMenuListingLeading.constant == 0
+    }
+    
+    
+    
+    func openMenu()
+    {
+        self.isHidden = false
+        self.backgroundColor = UIColor.init(white: 0.4, alpha: 0.0)
+        
+        superviewTmp = self.superview
+        UIApplication.shared.keyWindow?.addSubview(self)
+        
+        cnstMenuListingLeading.constant = 0
+
+        UIView.animate(withDuration: 0.25) { 
+            self.superviewTmp?.transform = CGAffineTransform.init(scaleX: 0.95, y: 0.95)
+            self.backgroundColor = UIColor.init(white: 0.4, alpha: 0.7)
+            self.layoutIfNeeded()
+        }
+    }
+    
+    
+    func closeMenu()
+    {
+        cnstMenuListingLeading.constant = -(viewMenuListing?.frame.size.width)!
+
+        UIView.animate(withDuration: 0.25, animations: {
+            
+            self.superviewTmp?.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+            self.backgroundColor = UIColor.init(white: 0.4, alpha: 0.0)
+            self.layoutIfNeeded()
+
+        }) { (isFinished) in
+            
+            self.superviewTmp?.addSubview(self)
+            self.superviewTmp = nil
+            self.isHidden = true
+        }
+    }
+    
+    
+    @IBAction func didTapMenuBackground(_ sender: UIButton)
+    {
+        closeMenu()
+    }
+
 }
 
 
@@ -28,22 +100,22 @@ class BaseViewController: UIViewController
     
 //    let arrayViews: [UIView] = UINib.init(nibName: "BaseViewController", bundle: nil).instantiate(withOwner: self, options: nil) as! [UIView]
 
-    
-
-    
+    var menuDrawer: MenuDrawer!
+        
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        
+        menuDrawer = UINib.init(nibName: "MenuSlider", bundle: nil).instantiate(withOwner: self, options: nil).first as! MenuDrawer
+        self.view.addSubview(menuDrawer)
+        menuDrawer.frame = UIScreen.main.bounds
+        menuDrawer.isHidden = true
+        menuDrawer.closeMenu()
+
+
        let menuBtn = (UINib.init(nibName: "MenuButton", bundle: nil).instantiate(withOwner: self, options: nil) as! [UIView]).first
         self.view.addSubview(menuBtn!)
-
-        let menuDrawer: MenuDrawer = UINib.init(nibName: "MenuSlider", bundle: nil).instantiate(withOwner: self, options: nil).first as! MenuDrawer
-        self.view.addSubview(menuDrawer)
-        menuDrawer.isHidden = true
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +137,7 @@ class BaseViewController: UIViewController
     
     @IBAction func didTapMenuBtn(_ sender: UIButton)
     {
-        print("menu called")
+        menuDrawer.openCloseMenuToogle()
     }
 
 }

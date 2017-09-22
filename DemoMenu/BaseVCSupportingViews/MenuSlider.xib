@@ -16,6 +16,13 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyO-Wo-CiR">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="didTapMenuBackground:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="Afz-em-kaX"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MK-hr-Rk6">
                     <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
                     <subviews>
@@ -33,14 +40,19 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29926826584507044" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="1MK-hr-Rk6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3cC-7l-d9x"/>
                 <constraint firstItem="1MK-hr-Rk6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6Dv-Vt-bhm"/>
+                <constraint firstAttribute="trailing" secondItem="RyO-Wo-CiR" secondAttribute="trailing" id="8sl-gT-n9K"/>
+                <constraint firstAttribute="bottom" secondItem="RyO-Wo-CiR" secondAttribute="bottom" id="Xu5-eH-5Rc"/>
                 <constraint firstAttribute="bottom" secondItem="1MK-hr-Rk6" secondAttribute="bottom" id="Ylb-9L-EAM"/>
+                <constraint firstItem="RyO-Wo-CiR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aUS-4P-zDM"/>
                 <constraint firstItem="1MK-hr-Rk6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="260:375" id="g1c-Fx-RE0"/>
+                <constraint firstItem="RyO-Wo-CiR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ru6-l0-B6x"/>
             </constraints>
             <connections>
+                <outlet property="cnstMenuListingLeading" destination="3cC-7l-d9x" id="kWq-kj-GuV"/>
                 <outlet property="tblMenuList" destination="TXj-kg-C5Y" id="h2l-ha-yIe"/>
                 <outlet property="viewMenuListing" destination="1MK-hr-Rk6" id="O6y-bk-vFK"/>
             </connections>

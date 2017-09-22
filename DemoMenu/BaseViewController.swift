@@ -8,104 +8,13 @@
 
 import UIKit
 
-class MenuDrawer: UIView
-{
-    @IBOutlet weak var viewMenuListing: UIView?
-    @IBOutlet weak var tblMenuList: UITableView?
-    @IBOutlet weak var cnstMenuListingLeading: NSLayoutConstraint!
-    @IBOutlet weak var imgBG: UIImageView!
-    @IBOutlet weak var btnBG: UIButton!
-
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-    }
-    
-    
-    func openCloseMenuToogle()
-    {
-        if isMenuOpened()
-        {
-            closeMenu()
-        }else
-        {
-            openMenu()
-        }
-    }
-    
-    
-    func isMenuOpened() -> Bool
-    {
-        return cnstMenuListingLeading.constant == 0
-    }
-    
-    
-    
-    func openMenu()
-    {
-        imgBG.image = captureScreen()
-        
-        self.isHidden = false
-        self.btnBG.backgroundColor = UIColor.init(white: 0.0, alpha: 0.0)
-        
-        cnstMenuListingLeading.constant = 0
-
-        UIView.animate(withDuration: 0.25) { 
-            self.imgBG.transform = CGAffineTransform.init(scaleX: 0.95, y: 0.95)
-            self.btnBG.backgroundColor = UIColor.init(white: 0.0, alpha: 0.7)
-            self.layoutIfNeeded()
-        }
-    }
-    
-    
-    func closeMenu()
-    {
-        cnstMenuListingLeading.constant = -(viewMenuListing?.frame.size.width)!
-
-        UIView.animate(withDuration: 0.25, animations: {
-            
-            self.imgBG.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
-            self.btnBG.backgroundColor = UIColor.init(white: 0.0, alpha: 0.0)
-            self.layoutIfNeeded()
-
-        }) { (isFinished) in
-            
-            self.isHidden = true
-        }
-    }
-    
-    
-    @IBAction func didTapMenuBackground(_ sender: UIButton)
-    {
-        closeMenu()
-    }
-    
-    
-    func captureScreen() -> UIImage?
-    {
-        UIGraphicsBeginImageContextWithOptions((superview?.bounds.size)!, false, UIScreen.main.scale)
-        superview?.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-
-}
-
 
 
 class BaseViewController: UIViewController
 {
     
-//    @IBOutlet weak var viewMenuList: UIView!
-//    @IBOutlet weak var viewMenuBtnBG: UIView!
-
-    
-    
-//    let arrayViews: [UIView] = UINib.init(nibName: "BaseViewController", bundle: nil).instantiate(withOwner: self, options: nil) as! [UIView]
-
     var menuDrawer: MenuDrawer!
+    var selectedRow: NSInteger = -121
         
     
     override func viewDidLoad()
@@ -117,7 +26,20 @@ class BaseViewController: UIViewController
         menuDrawer.frame = UIScreen.main.bounds
         menuDrawer.isHidden = true
         menuDrawer.closeMenu()
+        
+        
+        menuDrawer.tblMenuList?.register(MenuListCell.self, forCellReuseIdentifier: "proCell")
+        menuDrawer.tblMenuList?.register(UINib.init(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "proCell")
+        
 
+//        menuDrawer.tblMenuList?.register(MenuListHeader.self, forHeaderFooterViewReuseIdentifier: "menuHeader")
+//        menuDrawer.tblMenuList?.register(UINib.init(nibName: "MenuCellHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "menuHeader")
+
+        menuDrawer.tblMenuList?.delegate = self
+        menuDrawer.tblMenuList?.dataSource = self
+        
+        
+        
 
        let menuBtn = (UINib.init(nibName: "MenuButton", bundle: nil).instantiate(withOwner: self, options: nil) as! [UIView]).first
         self.view.addSubview(menuBtn!)
@@ -144,5 +66,70 @@ class BaseViewController: UIViewController
     {
         menuDrawer.openCloseMenuToogle()
     }
-
 }
+
+
+extension BaseViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 10
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 40
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+        return selectedRow == section ? 10 : 0;
+    }
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = (UINib.init(nibName: "MenuCellHeader", bundle: nil).instantiate(withOwner: self, options: nil) as! [UIView]).first as! MenuListHeader
+        headerView.completion = { result, error in
+            
+            print(error ?? "")
+        
+            if self.selectedRow != section
+            {
+                self.selectedRow = section
+            }else
+            {
+                self.selectedRow = -231
+            }
+            
+            tableView.reloadSections(IndexSet.init(integersIn: 0...(tableView.numberOfSections - 1)), with: .fade)
+
+        }
+        
+        
+        return headerView
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "proCell") as! MenuListCell
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+        
+    }
+}
+
+
+
+
+

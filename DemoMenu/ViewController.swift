@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: BaseViewController
 {
+    
+    @IBOutlet weak var viewSub: UIView!
+
+    
+    let viewRadiuosMeter = RadiousMeter.initWitXibWith()
+    
 
     override func viewDidLoad()
     {
@@ -18,12 +24,21 @@ class ViewController: BaseViewController
     }
 
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewRadiuosMeter.setFrame(frame: viewSub.bounds)
+        viewSub.addSubview(viewRadiuosMeter)
+    }
+    
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    
 
 }
 

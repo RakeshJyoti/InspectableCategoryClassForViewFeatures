@@ -74,7 +74,7 @@ extension UIView {
         
         set {
             self.layer.cornerRadius = newValue
-            self.layer.masksToBounds = false
+            self.layer.masksToBounds = true
         }
         
         get {

@@ -69,6 +69,11 @@
                 <constraint firstItem="dhl-DB-fGV" firstAttribute="centerX" secondItem="C9M-sC-d3u" secondAttribute="centerX" constant="-120" id="fKm-Qv-6zh"/>
                 <constraint firstItem="dhl-DB-fGV" firstAttribute="centerY" secondItem="C9M-sC-d3u" secondAttribute="centerY" id="h4w-HS-Ieg"/>
             </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornorRadious">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="cnstCenterX" destination="fKm-Qv-6zh" id="vTk-eg-fOz"/>
                 <outlet property="viewHalfCircle" destination="dhl-DB-fGV" id="re4-41-FRL"/>

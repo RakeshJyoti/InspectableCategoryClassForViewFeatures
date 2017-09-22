@@ -13,11 +13,9 @@ class MenuDrawer: UIView
     @IBOutlet weak var viewMenuListing: UIView?
     @IBOutlet weak var tblMenuList: UITableView?
     @IBOutlet weak var cnstMenuListingLeading: NSLayoutConstraint!
-    
-    
-    var superviewTmp: UIView?
-    
-    
+    @IBOutlet weak var imgBG: UIImageView!
+    @IBOutlet weak var btnBG: UIButton!
+
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -46,17 +44,16 @@ class MenuDrawer: UIView
     
     func openMenu()
     {
-        self.isHidden = false
-        self.backgroundColor = UIColor.init(white: 0.4, alpha: 0.0)
+        imgBG.image = captureScreen()
         
-        superviewTmp = self.superview
-        UIApplication.shared.keyWindow?.addSubview(self)
+        self.isHidden = false
+        self.btnBG.backgroundColor = UIColor.init(white: 0.0, alpha: 0.0)
         
         cnstMenuListingLeading.constant = 0
 
         UIView.animate(withDuration: 0.25) { 
-            self.superviewTmp?.transform = CGAffineTransform.init(scaleX: 0.95, y: 0.95)
-            self.backgroundColor = UIColor.init(white: 0.4, alpha: 0.7)
+            self.imgBG.transform = CGAffineTransform.init(scaleX: 0.95, y: 0.95)
+            self.btnBG.backgroundColor = UIColor.init(white: 0.0, alpha: 0.7)
             self.layoutIfNeeded()
         }
     }
@@ -68,14 +65,12 @@ class MenuDrawer: UIView
 
         UIView.animate(withDuration: 0.25, animations: {
             
-            self.superviewTmp?.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
-            self.backgroundColor = UIColor.init(white: 0.4, alpha: 0.0)
+            self.imgBG.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+            self.btnBG.backgroundColor = UIColor.init(white: 0.0, alpha: 0.0)
             self.layoutIfNeeded()
 
         }) { (isFinished) in
             
-            self.superviewTmp?.addSubview(self)
-            self.superviewTmp = nil
             self.isHidden = true
         }
     }
@@ -84,6 +79,16 @@ class MenuDrawer: UIView
     @IBAction func didTapMenuBackground(_ sender: UIButton)
     {
         closeMenu()
+    }
+    
+    
+    func captureScreen() -> UIImage?
+    {
+        UIGraphicsBeginImageContextWithOptions((superview?.bounds.size)!, false, UIScreen.main.scale)
+        superview?.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 
 }

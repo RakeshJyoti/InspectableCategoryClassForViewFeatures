@@ -11,6 +11,9 @@
 		4900326A1F74D98A00CE417E /* RadiousMeter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490032681F74D98A00CE417E /* RadiousMeter.xib */; };
 		4900326F1F74E15100CE417E /* delambaz.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4900326E1F74E15100CE417E /* delambaz.gif */; };
 		490032711F74E16700CE417E /* location_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 490032701F74E16700CE417E /* location_pin.png */; };
+		490032741F75285700CE417E /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490032721F75285700CE417E /* Listing.swift */; };
+		490032751F75285700CE417E /* Listing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490032731F75285700CE417E /* Listing.xib */; };
+		490032771F752A3400CE417E /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490032761F752A3400CE417E /* ProductCell.xib */; };
 		490BA61E1F73C8DE000B0C96 /* MenuButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490BA61C1F73C8DE000B0C96 /* MenuButton.xib */; };
 		490BA61F1F73C8DE000B0C96 /* MenuSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490BA61D1F73C8DE000B0C96 /* MenuSlider.xib */; };
 		490BA6211F73E75B000B0C96 /* CategoryFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490BA6201F73E75B000B0C96 /* CategoryFiles.swift */; };
@@ -46,6 +49,9 @@
 		490032681F74D98A00CE417E /* RadiousMeter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiousMeter.xib; sourceTree = "<group>"; };
 		4900326E1F74E15100CE417E /* delambaz.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = delambaz.gif; sourceTree = "<group>"; };
 		490032701F74E16700CE417E /* location_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_pin.png; sourceTree = "<group>"; };
+		490032721F75285700CE417E /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		490032731F75285700CE417E /* Listing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Listing.xib; sourceTree = "<group>"; };
+		490032761F752A3400CE417E /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		490BA61C1F73C8DE000B0C96 /* MenuButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuButton.xib; sourceTree = "<group>"; };
 		490BA61D1F73C8DE000B0C96 /* MenuSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSlider.xib; sourceTree = "<group>"; };
 		490BA6201F73E75B000B0C96 /* CategoryFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryFiles.swift; sourceTree = "<group>"; };
@@ -144,10 +150,13 @@
 				4922B3C11F7297AB00D2C10A /* BaseViewController.swift */,
 				490BA61B1F73C8BE000B0C96 /* BaseVCSupportingViews */,
 				4922B3951F72977700D2C10A /* ViewController.swift */,
-				490032661F74D98A00CE417E /* RadiousMeter */,
+				490032721F75285700CE417E /* Listing.swift */,
+				490032731F75285700CE417E /* Listing.xib */,
+				490032761F752A3400CE417E /* ProductCell.xib */,
 				490BA6201F73E75B000B0C96 /* CategoryFiles.swift */,
 				4900326D1F74E15100CE417E /* Resource */,
 				4922B3971F72977700D2C10A /* Main.storyboard */,
+				490032661F74D98A00CE417E /* RadiousMeter */,
 				4922B39A1F72977700D2C10A /* Assets.xcassets */,
 				4922B39C1F72977700D2C10A /* LaunchScreen.storyboard */,
 				4922B39F1F72977700D2C10A /* Info.plist */,
@@ -282,10 +291,12 @@
 			files = (
 				4900326F1F74E15100CE417E /* delambaz.gif in Resources */,
 				4900326A1F74D98A00CE417E /* RadiousMeter.xib in Resources */,
+				490032751F75285700CE417E /* Listing.xib in Resources */,
 				4922B39E1F72977700D2C10A /* LaunchScreen.storyboard in Resources */,
 				490BA61F1F73C8DE000B0C96 /* MenuSlider.xib in Resources */,
 				490BA61E1F73C8DE000B0C96 /* MenuButton.xib in Resources */,
 				490032711F74E16700CE417E /* location_pin.png in Resources */,
+				490032771F752A3400CE417E /* ProductCell.xib in Resources */,
 				4922B39B1F72977700D2C10A /* Assets.xcassets in Resources */,
 				4922B3991F72977700D2C10A /* Main.storyboard in Resources */,
 			);
@@ -316,6 +327,7 @@
 				4922B3941F72977700D2C10A /* AppDelegate.swift in Sources */,
 				4922B3C31F7297AB00D2C10A /* BaseViewController.swift in Sources */,
 				490BA6211F73E75B000B0C96 /* CategoryFiles.swift in Sources */,
+				490032741F75285700CE417E /* Listing.swift in Sources */,
 				490032691F74D98A00CE417E /* RadiousMeter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

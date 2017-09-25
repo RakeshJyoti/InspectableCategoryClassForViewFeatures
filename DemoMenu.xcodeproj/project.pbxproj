@@ -15,7 +15,6 @@
 		490032751F75285700CE417E /* Listing.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490032731F75285700CE417E /* Listing.xib */; };
 		490032771F752A3400CE417E /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490032761F752A3400CE417E /* ProductCell.xib */; };
 		490032791F753E7D00CE417E /* MenuCellHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490032781F753E7D00CE417E /* MenuCellHeader.xib */; };
-		4900327B1F753EBB00CE417E /* BaseVCSupportingClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900327A1F753EBB00CE417E /* BaseVCSupportingClasses.swift */; };
 		4900327D1F7541DC00CE417E /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4900327C1F7541DC00CE417E /* MenuCell.xib */; };
 		490BA61E1F73C8DE000B0C96 /* MenuButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490BA61C1F73C8DE000B0C96 /* MenuButton.xib */; };
 		490BA61F1F73C8DE000B0C96 /* MenuSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490BA61D1F73C8DE000B0C96 /* MenuSlider.xib */; };
@@ -28,6 +27,7 @@
 		4922B3A91F72977700D2C10A /* DemoMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922B3A81F72977700D2C10A /* DemoMenuTests.swift */; };
 		4922B3B41F72977700D2C10A /* DemoMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922B3B31F72977700D2C10A /* DemoMenuUITests.swift */; };
 		4922B3C31F7297AB00D2C10A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922B3C11F7297AB00D2C10A /* BaseViewController.swift */; };
+		49E67B8D1F78C4FE00376696 /* BaseVCSupportingClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E67B8C1F78C4FE00376696 /* BaseVCSupportingClasses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,6 @@
 		490032731F75285700CE417E /* Listing.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Listing.xib; sourceTree = "<group>"; };
 		490032761F752A3400CE417E /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		490032781F753E7D00CE417E /* MenuCellHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCellHeader.xib; sourceTree = "<group>"; };
-		4900327A1F753EBB00CE417E /* BaseVCSupportingClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseVCSupportingClasses.swift; path = ../BaseVCSupportingClasses.swift; sourceTree = "<group>"; };
 		4900327C1F7541DC00CE417E /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		490BA61C1F73C8DE000B0C96 /* MenuButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuButton.xib; sourceTree = "<group>"; };
 		490BA61D1F73C8DE000B0C96 /* MenuSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSlider.xib; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		4922B3B31F72977700D2C10A /* DemoMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoMenuUITests.swift; sourceTree = "<group>"; };
 		4922B3B51F72977700D2C10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4922B3C11F7297AB00D2C10A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		49E67B8C1F78C4FE00376696 /* BaseVCSupportingClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVCSupportingClasses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 		490BA61B1F73C8BE000B0C96 /* BaseVCSupportingViews */ = {
 			isa = PBXGroup;
 			children = (
-				4900327A1F753EBB00CE417E /* BaseVCSupportingClasses.swift */,
+				49E67B8C1F78C4FE00376696 /* BaseVCSupportingClasses.swift */,
 				490BA61C1F73C8DE000B0C96 /* MenuButton.xib */,
 				4900327C1F7541DC00CE417E /* MenuCell.xib */,
 				490032781F753E7D00CE417E /* MenuCellHeader.xib */,
@@ -335,8 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4922B3961F72977700D2C10A /* ViewController.swift in Sources */,
+				49E67B8D1F78C4FE00376696 /* BaseVCSupportingClasses.swift in Sources */,
 				4922B3941F72977700D2C10A /* AppDelegate.swift in Sources */,
-				4900327B1F753EBB00CE417E /* BaseVCSupportingClasses.swift in Sources */,
 				4922B3C31F7297AB00D2C10A /* BaseViewController.swift in Sources */,
 				490BA6211F73E75B000B0C96 /* CategoryFiles.swift in Sources */,
 				490032741F75285700CE417E /* Listing.swift in Sources */,

@@ -30,13 +30,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TXj-kg-C5Y">
-                            <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
+                            <rect key="frame" x="0.0" y="127" width="260" height="540"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="TXj-kg-C5Y" firstAttribute="top" secondItem="1MK-hr-Rk6" secondAttribute="top" id="9wf-87-xcp"/>
+                        <constraint firstItem="TXj-kg-C5Y" firstAttribute="top" secondItem="1MK-hr-Rk6" secondAttribute="top" constant="127" id="9wf-87-xcp"/>
                         <constraint firstItem="TXj-kg-C5Y" firstAttribute="leading" secondItem="1MK-hr-Rk6" secondAttribute="leading" id="HIF-UP-OVa"/>
                         <constraint firstAttribute="bottom" secondItem="TXj-kg-C5Y" secondAttribute="bottom" id="KsM-hd-0gn"/>
                         <constraint firstAttribute="trailing" secondItem="TXj-kg-C5Y" secondAttribute="trailing" id="Qwy-gv-vCh"/>

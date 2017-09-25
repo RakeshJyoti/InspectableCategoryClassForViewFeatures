@@ -44,6 +44,7 @@ class BaseViewController: UIViewController
        let menuBtn = (UINib.init(nibName: "MenuButton", bundle: nil).instantiate(withOwner: self, options: nil) as! [UIView]).first
         self.view.addSubview(menuBtn!)
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
